@@ -260,3 +260,19 @@ used here because code ownership requests alone do not restrict who can push.
 - [scikit-learn preprocessing pipelines](https://scikit-learn.org/1.5/modules/compose.html)
 - [R generalized linear models](https://stat.ethz.ch/R-manual/R-release/library/stats/html/glm.html)
 - [Docker bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)
+
+## Verified run
+
+Built and ran both images on 2026-11-02 on an Apple Silicon Mac using a Linux/arm64
+Docker engine. Each run loaded 891 training rows and 418 competition-test rows,
+retained all passengers, and wrote 418 binary predictions in the original ID order.
+
+- **Python:** training accuracy **0.804714**, holdout accuracy **0.798883**.
+- **R:** training accuracy **0.803591**, holdout accuracy **0.821229**.
+- Each holdout contained 179 labeled rows. Its majority baseline was **0.614525**.
+- Competition-test accuracy was unavailable in both runs because labels are withheld.
+
+The different holdout splits and regularization choices are described above; these
+numbers do not establish that one language is better. Outputs vary if input data,
+model settings, or runtime versions are changed. Input CSVs and generated passenger
+predictions are intentionally excluded from this repository.
