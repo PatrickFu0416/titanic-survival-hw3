@@ -1,0 +1,23 @@
+# Input datasets and generated artifacts stay local.
+src/data/
+outputs/
+*.csv
+*.zip
+*.rds
+*.pkl
+*.joblib
+
+# Environments, secrets, editor and OS files.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+kaggle.json
+.Rhistory
+.RData
+.Rproj.user/
+.vscode/
+.idea/
